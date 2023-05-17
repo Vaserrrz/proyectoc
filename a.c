@@ -39,7 +39,6 @@ short sBusca_Nodo_En_Lista_Vertices(char *pszNombreNodo, struct Vertice *pstList
   }
   return(ERROR); //Sino lo encontro salio por que encontro el final de la lista y retorna error
 }
-
 sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices){
   struct Nodo *pstAuxNodo = pstListaNodos ;
 
@@ -54,7 +53,6 @@ sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstLis
   // en la lista de vertices
   return(ERROR);
 }
-
 void vAgrega_Nodo_y_Vertices_Al_Color(short sCont, struct Nodo *pstNodo){
   struct Nodo *pstAuxNodo ;
   struct Vertice *pstAuxVer ;
@@ -124,7 +122,6 @@ void vInserta_Vertice( char *pszNombreNodo, char *pszNombreVertice ){
     return ;
   };
 }
-
 void vRespuesta(void){
   struct Nodo *pstNodo = pstHeadGrafo ;
   struct Nodo *pstAntNodo = NULL ;
@@ -168,9 +165,6 @@ void vRespuesta(void){
   getchar() ;
   return ;
 }
-
-
-
 short sLeerArchivo(void){
 
   char szNombreArchivo[100] ; // Guarda el nombre del archivo dado por el usuario en pantalla
@@ -271,7 +265,6 @@ void vMostrar(void){
   printf("\nPress enter para continuar");
   getchar();
 }
-
 main()
 {
   short sOpcion;
