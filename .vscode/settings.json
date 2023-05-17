@@ -23,6 +23,8 @@
         "*.embeddedhtml": "html",
         "stdlib.h": "c",
         "string.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "paintgraph.h": "c",
+        "readfile_creategraph.h": "c"
     }
 }

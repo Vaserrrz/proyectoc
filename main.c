@@ -1,31 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define SUCCESS 1
-#define ERROR 0
-#define MAX_COLORS 4 // MAXIMA CANTIDAD DE CONBINACIONES ACEPTADAS
-struct Vertice {
-
-  char szNombre[10] ;
-  struct Vertice *pstNextVertice ;
-};
-struct Nodo {
-
-  char szNombre[10] ;
-  struct Vertice *pstHeadVertice ;
-  struct Nodo *pstNextNodo ;
-};
-
-
-/*Lista donde se van a guardar el Grafo ordenado */
-struct Colores {
-  char szNombre[20];
-  struct Nodo *pstHeadNodo ; // Lista de Nodos del color
-  struct Vertice *pstHeadVertice ; // lista de vertices que llegan o salen de ese color
-};
-struct Nodo *pstHeadGrafo = NULL ;
-struct Colores stColores[MAX_COLORS] ;
-
+#include "PaintGraph.h"
+#include "ReadFile_CreateGraph.h"
 
 void vMostrar(void){
   struct Nodo *pstNodoAux = pstHeadGrafo;
@@ -50,6 +27,7 @@ void vMostrar(void){
   printf("\nPress enter para continuar");
   getchar();
 }
+
 main()
 {
   short sOpcion;
@@ -65,7 +43,7 @@ main()
     printf("OPCION [  ]\b\b\b");
     scanf("%d",&sOpcion);
     getchar() ;
-    
+
     if( sOpcion == 1)
     sLeerArchivo() ;
     if( sOpcion ==2)
