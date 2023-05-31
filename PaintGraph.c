@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "ReadFile_CreateGraph.h"
 #include "PaintGraph.h"
 
-void vRespuesta(void){
+void vRespuesta(struct Nodo *pstHeadGrafo){
   struct Nodo *pstNodo = pstHeadGrafo ;
   struct Nodo *pstAntNodo = NULL ;
   short sCont ;
@@ -19,21 +18,23 @@ void vRespuesta(void){
   do {
     sCont = 0 ;
     do{
-      if( sBusca_Nodo_En_Lista_Vertices(pstNodo->szNombre, stColores[sCont].pstHeadVertice ) != SUCCESS )
-      if(sBusca_Vertices_En_Lista_Nodos(stColores[sCont].pstHeadNodo, pstNodo->pstHeadVertice) != SUCCESS )
-      break ;
+      printf("\n[%s]",pstNodo->szNombre);
+      printf("%d", sCont);
+      if( sBusca_Nodo_En_Lista_Vertices(pstNodo->szNombre, stColores[sCont].pstHeadVertice ) != SUCCESS ){
+        if(sBusca_Vertices_En_Lista_Nodos(stColores[sCont].pstHeadNodo, pstNodo->pstHeadVertice) != SUCCESS ){
+          break;
+        }
+      } 
       sCont++ ;
-    } 
-    while(sCont < MAX_COLORS);{
-      vAgrega_Nodo_y_Vertices_Al_Color(sCont, pstNodo);
-      pstAntNodo = pstNodo ;
-      pstNodo = pstNodo-> pstNextNodo ; // asigna el siguinte nodo
-      pstAntNodo->pstNextNodo = NULL ;
-    }   
-  } 
+    }while(sCont < MAX_COLORS);
+    //printf("%d", sCont);
+    //printf("\n[%s]",pstNodo->szNombre);
+    vAgrega_Nodo_y_Vertices_Al_Color(sCont, pstNodo);
+    pstAntNodo = pstNodo ;
+    pstNodo = pstNodo-> pstNextNodo ; // asigna el siguinte nodo
+    pstAntNodo->pstNextNodo = NULL ;   
+  }while(pstNodo != NULL);
   
-  while(pstNodo != NULL);
-
   
   for( sCont = 0; sCont < MAX_COLORS ; sCont++ ){
     pstNodo = stColores[sCont].pstHeadNodo ;

@@ -4,6 +4,8 @@
 #include "PaintGraph.h"
 #include "ReadFile_CreateGraph.h"
 
+struct Nodo* pstHeadGrafo = NULL;
+
 void vMostrar(void){
   struct Nodo *pstNodoAux = pstHeadGrafo;
   struct Vertice *pstVerticeAux = NULL;
@@ -49,7 +51,7 @@ void vMostrar(void){
     if( sOpcion ==2)
     vMostrar();
     if( sOpcion == 3)
-    vRespuesta();
+    vRespuesta(pstHeadGrafo);
     if(sOpcion == 4)
     break;
   }

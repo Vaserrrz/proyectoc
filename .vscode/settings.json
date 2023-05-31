@@ -26,5 +26,6 @@
         "stdio.h": "c",
         "paintgraph.h": "c",
         "readfile_creategraph.h": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

@@ -10,7 +10,7 @@ short sLeerArchivo(void){
   char szDato[100]; // almacena datos que no se usan
   char szNodo[10]; // almacena el nombre del nodo
   char szVertice[10]; // almacena el nombre del vertice
-  short sCantCruces, sCont ; // almacena la cantodda de cruces
+  short sCantCruces, sCont ; // almacena la cantidad de cruces
   FILE *pFConfig = NULL ; // Puntero donde se lee el archivo
   struct Nodo *pstNodo = NULL ; //nodo que se va agragando
 
@@ -87,32 +87,29 @@ void vInserta_Vertice( char *pszNombreNodo, char *pszNombreVertice ){
       break ;
     else
     pstNodo = pstNodo->pstNextNodo ; // sino corresponde busca el soguiente
+  }while(pstNodo != NULL ); 
+  //insertar en la lista para ese nodo un nuevo vertice
+  pstVertice = (struct Vertice *)malloc(sizeof(struct Vertice)); // SE RESERVA LA MEMORIA PARA EL SIGUIENTE VERTICE
+  memset(pstVertice,0,sizeof(struct Vertice)); // inicializamos el aerea de memoria
+  sprintf(pstVertice->szNombre,"%s",pszNombreVertice) ; // SE LE ASIGNA EL NOMBRE
+
+  pstVerticeAux=pstNodo->pstHeadVertice;
+
+  if (pstNodo->pstHeadVertice == NULL){
+    pstNodo->pstHeadVertice = pstVertice;
+    pstVertice->pstNextVertice = NULL ;
   }
-  while(pstNodo != NULL ); 
-  {
-    //insertar en la lista para ese nodo un nuevo vertice
-    pstVertice = (struct Vertice *)malloc(sizeof(struct Vertice)); // SE RESERVA LA MEMORIA PARA EL SIGUIENTE VERTICE
-    memset(pstVertice,0,sizeof(struct Vertice)); // inicializamos el aerea de memoria
-    sprintf(pstVertice->szNombre,"%s",pszNombreVertice) ; // SE LE ASIGNA EL NOMBRE
-
-    pstVerticeAux=pstNodo->pstHeadVertice;
-
-    if (pstNodo->pstHeadVertice == NULL){
-      pstNodo->pstHeadVertice = pstVertice;
-      pstVertice->pstNextVertice = NULL ;
-    }
-    else{
-
-      do{
-        if (pstVerticeAux->pstNextVertice == NULL)
-        {
+  else{
+    do{
+      if (pstVerticeAux->pstNextVertice == NULL)
+      {
         pstVerticeAux->pstNextVertice = pstVertice;
         break;
-        }
-        pstVerticeAux=pstVerticeAux->pstNextVertice;
       }
-      while(1);
+      pstVerticeAux=pstVerticeAux->pstNextVertice;
     }
-    return ;
-  };
+    while(1);
+  }
+  return ;
+  
 }

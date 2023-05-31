@@ -2,6 +2,8 @@
 #define SUCCESS 1
 #define ERROR 0
 
+
+
 //ESTRUCTURAS
 struct Vertice {
 
@@ -23,7 +25,7 @@ struct Colores {
 struct Colores stColores[MAX_COLORS] ;
 
 //FUNCIONES
-void vRespuesta(void);
+void vRespuesta(struct Nodo *pstHeadGrafo);
 void vAgrega_Nodo_y_Vertices_Al_Color(short sCont, struct Nodo *pstNodo);
 short sBusca_Nodo_En_Lista_Vertices(char *pszNombreNodo, struct Vertice *pstListaVertices);
 short sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices);
