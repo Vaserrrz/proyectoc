@@ -15,7 +15,6 @@ short sLeerArchivo(void){
   struct Nodo *pstNodo = NULL ; //nodo que se va agragando
 
   /* Se ABRE EL ARCHIVO */
-  system("clear") ;
   memset(szNombreArchivo,0,sizeof(szNombreArchivo));
   printf(" POR FAVOR DIGITE EL NOMBRE DEL ARCHIVO :") ;
   scanf("%s",szNombreArchivo) ;

@@ -34,7 +34,7 @@ void vRespuesta(void){
   
   while(pstNodo != NULL);
 
-  system("clear");
+  
   for( sCont = 0; sCont < MAX_COLORS ; sCont++ ){
     pstNodo = stColores[sCont].pstHeadNodo ;
     printf("[%s] =>",stColores[sCont].szNombre);
@@ -90,7 +90,7 @@ short sBusca_Nodo_En_Lista_Vertices(char *pszNombreNodo, struct Vertice *pstList
   }
   return(ERROR); //Sino lo encontro salio por que encontro el final de la lista y retorna error
 }
-sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices){
+short sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices){
   struct Nodo *pstAuxNodo = pstListaNodos ;
 
   // recorre la lista de los nodos hasta el final

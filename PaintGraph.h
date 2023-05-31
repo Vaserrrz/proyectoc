@@ -26,6 +26,6 @@ struct Colores stColores[MAX_COLORS] ;
 void vRespuesta(void);
 void vAgrega_Nodo_y_Vertices_Al_Color(short sCont, struct Nodo *pstNodo);
 short sBusca_Nodo_En_Lista_Vertices(char *pszNombreNodo, struct Vertice *pstListaVertices);
-sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices);
+short sBusca_Vertices_En_Lista_Nodos(struct Nodo *pstListaNodos,struct Vertice *pstListaVertices);
 
 

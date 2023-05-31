@@ -7,7 +7,7 @@
 void vMostrar(void){
   struct Nodo *pstNodoAux = pstHeadGrafo;
   struct Vertice *pstVerticeAux = NULL;
-  system("clear");
+  
 
 
   printf("\n NODO ->  VERTICES .......\n");
@@ -28,12 +28,12 @@ void vMostrar(void){
   getchar();
 }
 
-main()
+ int main()
 {
-  short sOpcion;
+  int sOpcion;
   do
   {
-    system("clear");
+    
     printf(" ") ;
     printf("      MENU \n\n");
     printf(" 1) LEER CONFIGURACION\n") ;
