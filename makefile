@@ -1,6 +1,7 @@
 
 programa : main.o PaintGraph.o ReadFile_CreateGraph.o
 	@gcc main.o PaintGraph.o ReadFile_CreateGraph.o -o programa
+	./programa.exe
 
 main.o : main.c ReadFile_CreateGraph.h PaintGraph.h
 	@gcc -c main.c
